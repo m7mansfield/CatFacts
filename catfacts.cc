@@ -18,7 +18,7 @@ class Cat
 
 int main()
 {
-  system("echo 'Welcome to CatFacts! You will be recieving facts about cats every hour!' | mail 7405914455@txt.att.net");
+  system("echo 'Welcome to CatFacts! You will be recieving facts about cats every hour!' | mail @txt.att.net");
   Cat cat1;
   cat1.import_facts();
   time_t now = time(0);
@@ -211,7 +211,7 @@ void Cat::send_fact()
 {
   srand (time(NULL));
   int index = rand() % 67;
-  string command = "echo '' | mail 7405914455@txt.att.net";
+  string command = "echo '' | mail @txt.att.net";
   string random_fact = facts[index];
   command.insert(7, random_fact);
   system(command.c_str());
